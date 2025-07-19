@@ -8,7 +8,7 @@ const UserController = require('./controller/UserController');
 
 const app = express();
 const PORT = process.env.PORT;
-const HOST = process.env.HOST;
+const HOST = '0.0.0.0';
 
 // Proper CORS setup
 app.use(cors({
