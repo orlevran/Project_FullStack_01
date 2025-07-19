@@ -34,6 +34,15 @@ async function main()
         app.post('/api/register', userController.register_user.bind(userController));
         app.post('/api/login', userController.login_user.bind(userController));
 
+        
+        app.get('/debug/host', (req, res) => {
+            res.json({
+                host: HOST,
+                port: PORT,
+                message: 'Server is running'
+            });
+        });
+
         // Start server
         app.listen(PORT, HOST, () => {
             console.log(`🚀 Users Microservice running at http://${HOST}:${PORT}`);
