@@ -6,7 +6,8 @@ const UserController = require('./controller/UserController');
 //const EncryptionService = require('./service/EncryptionService');
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT;
+const HOST = process.env.HOST;
 
 // Proper CORS setup
 app.use(cors({
@@ -33,8 +34,8 @@ async function main()
         app.post('/api/login', userController.login_user.bind(userController));
 
         // Start server
-        app.listen(PORT, () => {
-            console.log(`🚀 Users Microservice running at http://localhost:${PORT}`);
+        app.listen(PORT, HOST, () => {
+            console.log(`🚀 Users Microservice running at http://${HOST}:${PORT}`);
         });
     }
     catch (error) {
