@@ -13,6 +13,7 @@ RUN npm install
 
 # Copy the rest of the project files
 COPY . .
+COPY .env .env
 
 # Expose the port your service runs on (change if needed)
 EXPOSE 5000
